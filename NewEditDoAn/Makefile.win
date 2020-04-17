@@ -1,0 +1,61 @@
+# Project: DoAN_CTDLGT_DE7
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o Vector2.o Button.o Menu.o Program.o Node.o List_node.o Graph.o Layout.o Arrow.o List_Arrow.o Save_file.o
+LINKOBJ  = main.o Vector2.o Button.o Menu.o Program.o Node.o List_node.o Graph.o Layout.o Arrow.o List_Arrow.o Save_file.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lbgi -lgdi32 -luser32 -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = DoAN_CTDLGT_DE7.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3 -std=c++11
+CFLAGS   = $(INCS) -m32 -g3 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Vector2.o: Vector2.cpp
+	$(CPP) -c Vector2.cpp -o Vector2.o $(CXXFLAGS)
+
+Button.o: Button.cpp
+	$(CPP) -c Button.cpp -o Button.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
+
+Program.o: Program.cpp
+	$(CPP) -c Program.cpp -o Program.o $(CXXFLAGS)
+
+Node.o: Node.cpp
+	$(CPP) -c Node.cpp -o Node.o $(CXXFLAGS)
+
+List_node.o: List_node.cpp
+	$(CPP) -c List_node.cpp -o List_node.o $(CXXFLAGS)
+
+Graph.o: Graph.cpp
+	$(CPP) -c Graph.cpp -o Graph.o $(CXXFLAGS)
+
+Layout.o: Layout.cpp
+	$(CPP) -c Layout.cpp -o Layout.o $(CXXFLAGS)
+
+Arrow.o: Arrow.cpp
+	$(CPP) -c Arrow.cpp -o Arrow.o $(CXXFLAGS)
+
+List_Arrow.o: List_Arrow.cpp
+	$(CPP) -c List_Arrow.cpp -o List_Arrow.o $(CXXFLAGS)
+
+Save_file.o: Save_file.cpp
+	$(CPP) -c Save_file.cpp -o Save_file.o $(CXXFLAGS)
